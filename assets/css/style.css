@@ -1,0 +1,37 @@
+h1 {
+	font-size: 36px;
+	text-align: center;
+	font-weight:bold;
+	color: white;
+
+}
+
+#top, #timer, #question, #correct, #image-holder, #correct-answer,
+#answer1, #answer2, #answer3, #answer4, #wins, #losses, #restart, #unknown {
+	color: white;
+	text-align:center;
+}
+
+
+body {
+	background-image: url("../images/background.jpg");
+}
+
+html {
+	position:relative;
+	min-height:100%;
+}
+
+#footer {
+	padding-top: 10px;
+	border-top: 4px solid;
+  	border-top-color:#4aaaa5;
+    bottom: 0px;
+    width: 100%;
+    position: absolute;
+    height: 40px;
+    left: 0px;
+    text-align: center;
+    color: white;
+    background-color: #666;
+}
