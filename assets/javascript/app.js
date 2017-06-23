@@ -36,10 +36,11 @@ $("#startButton").on("click", function game() {
   var intervalId;
   var clockRunning = false;
 
-	$("#startButton").text("");
+	$("#startButton").html("");
     
 	function one() {
       
+      console.log("Count is " + count);
       run();
 		  $("#question").html(myArray[count]);
 		  $("#button1").html(myOptions[count][0]);
@@ -50,9 +51,8 @@ $("#startButton").on("click", function game() {
      
       setTimeout(next, 10000);
 
-      }
-     
-  };
+      
+     };
 
   $("#button1").on("click", function() {
 
@@ -150,8 +150,9 @@ $("#startButton").on("click", function game() {
         clearInterval(intervalId);
         $("#restart").on("click", restart);
         clearInterval(intervalId);
-
     }
+
+    
     setTimeout(one, 4000);
   }
 
