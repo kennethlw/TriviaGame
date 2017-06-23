@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$("#startButton").on("click", function game() {
  
 	var myArray = ["1. Which talk show host plays the voice of Dory in the Pixar film 'Finding Nemo'?", 
 				   "2. What is WALL-E's job?",
@@ -36,9 +36,10 @@ $(document).ready(function () {
   var intervalId;
   var clockRunning = false;
 
-	alert("Click OK to start playing.");
+	$("#startButton").text("");
     
 	function one() {
+      
       run();
 		  $("#question").html(myArray[count]);
 		  $("#button1").html(myOptions[count][0]);
@@ -48,7 +49,9 @@ $(document).ready(function () {
       
      
       setTimeout(next, 10000);
-      
+
+      }
+     
   };
 
   $("#button1").on("click", function() {
@@ -143,9 +146,10 @@ $(document).ready(function () {
         $("#button2").html("");
         $("#button3").html("");
         $("#button4").html("");
-        clearInterval(intervalId);
         $("#restart").html("<button> Start Over </button>");
+        clearInterval(intervalId);
         $("#restart").on("click", restart);
+        clearInterval(intervalId);
 
     }
     setTimeout(one, 4000);
@@ -185,7 +189,6 @@ $(document).ready(function () {
     tracker--;
 
     if (tracker < 1) {
-      console.log("!!!!!!!!!!!!!!!!!!!!!");
       $("#correct").html("<h2>Time's Up!</h2>"); 
       displayImage();
       setTimeout(clearImage, 3000);
@@ -223,8 +226,9 @@ $(document).ready(function () {
       incorrectAnswer = 0;
       unanswered = 0;
       count = 0;
-      //tracker = 10;
-      one();
+      clockRunning = false;
+      clearInterval(intervalId);
+      game();
   }
   //call the function to setup the question and answers
   one();

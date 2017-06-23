@@ -12,6 +12,10 @@ h1 {
 	text-align:center;
 }
 
+#startButton {
+	text-align:center;
+	margin: 0 auto;
+}
 
 body {
 	background-image: url("../images/background.jpg");
